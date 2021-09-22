@@ -1,0 +1,14 @@
+@import "../../plugins/element-plus/element-variables.scss";
+/*padding-top*/
+.border2{
+  border: 1px solid $--border-color-base;
+  border-radius: 2px;
+}
+.border3{
+  border: 1px solid $--border-color-base;
+  border-radius: 3px;
+}
+.border5{
+  border: 1px solid $--border-color-base;
+  border-radius: 5px;
+}

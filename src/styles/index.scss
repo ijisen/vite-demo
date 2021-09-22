@@ -1,0 +1,8 @@
+//element-variables.scss
+
+@import "../plugins/element-plus/element-variables";
+
+@import './frame/index.scss';
+.color-teal {
+  color: $--color-primary;
+}

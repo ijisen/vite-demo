@@ -1,0 +1,130 @@
+/* RESET COMMON */
+/* ----------------------------------------- */
+
+/**
+ * JiSen's Reset Stylesheet
+ *
+ * v1.0
+ * 2017-01-04
+ * Author: Eric Meyer - http://meyerweb.com/eric/tools/css/reset/
+ */
+html{
+  /*ie11 滚动条自动隐藏导致分享按钮被遮住，该属性让IE始终显示滚动条*/
+  -ms-overflow-style:scrollbar;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+a, abbr, acronym, address, applet, article, aside, audio,
+b, big, body, blockquote,
+center, cite, code, caption, canvas,
+del, details, dd, dfn, div, dl, dt,
+em, embed,
+fieldset, figure, figcaption, footer, form,
+html, header, hgroup, h1, h2, h3, h4, h5, h6,
+i, iframe, img, input, ins,
+kbd,
+label, legend, li,
+mark, menu,
+nav,
+object, ol, output,
+p, pre,
+q,
+ruby,
+section, span, summary,
+s, samp, small, strike, sub, sup,
+table, tbody, tfoot, thead, tr, th, td, tt, time, textarea,
+u, ul,
+var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  /* max-width: 100%; */
+  -ms-interpolation-mode: bicubic;
+  -webkit-touch-callout: none
+}
+a {
+  -webkit-transition: .25s;
+  transition: .25s;
+  text-decoration: none;
+  color: #333;
+}
+a:focus, a:hover {
+  text-decoration: none;
+}
+/*单击时去除阴影*/
+a,img,button,input,textarea,p,span,li{
+  -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+/*去除表单的默认样式*/
+input,textarea{
+  -webkit-appearance:none;
+  outline: none;
+  line-height: normal;
+}
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input::-ms-clear{display: none;}
+input::-ms-reveal{display: none;}
+/* 去除谷歌默认填充颜色 */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  background-color: transparent !important;
+  color: #000;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: transparent !important;
+  color: #000;
+}
+:focus {
+  outline: 0
+}
+
+ul,ol,li{
+  list-style: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+textarea {
+  font-family: Arial, serif;
+}
+.ver-top {
+  vertical-align: top;
+}
+.ver-mid{
+  vertical-align: middle;
+}

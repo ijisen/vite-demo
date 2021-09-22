@@ -1,0 +1,9 @@
+/* ----------------float CSS------------------------- */
+.clearfix:after,
+.clearfix:before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
