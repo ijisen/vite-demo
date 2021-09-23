@@ -6,7 +6,7 @@ import {
 } from 'vue-router'
 // 1. Define route components.
 // These can be imported from other files
-import NProgress from "../plugins/progress";
+// import NProgress from "../plugins/progress";
 import { storageSession } from "../utils/storage";
 // import i18n from "../plugins/i18n";
 
@@ -79,7 +79,7 @@ const router = createRouter({
 
 router.beforeEach((to, _from, next) => {
   const name = storageSession.getItem("info");
-  NProgress.start();
+  // NProgress.start();
   // const { t } = i18n.global;
   console.log(to)
   // to.meta.title ? (document.title = t(to.meta.title)) : ""; // 动态title
@@ -100,7 +100,7 @@ router.beforeEach((to, _from, next) => {
 });
 
 router.afterEach(() => {
-  NProgress.done();
+  // NProgress.done();
 });
 
 export default router

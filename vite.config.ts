@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
       VitePluginElementPlus({
         // 如果你需要使用 [component name].scss 源文件，你需要把下面的注释取消掉。
         // 参考 https://github.com/element-plus/vite-plugin-element-plus
-        // useSource: true,
+        useSource: true,
         format: mode === 'development' ? 'esm' : 'cjs',
       }),
     ]
