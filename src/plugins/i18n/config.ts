@@ -48,7 +48,7 @@ export const getLocale = (): string => {
  * @param realReload 是否刷新页面，默认刷新
  * @param callback
  */
-export const setLocale = (lang: string, realReload = true, callback: Function) => {
+export const setLocale = (lang: string, realReload = true, callback?: Function) => {
 
   if(lang !== undefined && !localeNameExp(lang)) {
     // for reset when lang === undefined

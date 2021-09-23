@@ -5,6 +5,7 @@ import elementZhCn from 'element-plus/es/locale/lang/zh-cn'
 import {
   defaultLang,
   importAllLocales,
+  getLocale
 } from "./config";
 
 export const elementPlusMessages: { [key: string]: any } = {
@@ -12,9 +13,10 @@ export const elementPlusMessages: { [key: string]: any } = {
   'en-US': elementEn,
 }
 
+const sysLocale = getLocale();
 const i18n = createI18n({
-  locale: defaultLang, // set locale zh-CN
-  fallbackLocale: defaultLang, // set fallback locale en-US
+  locale: sysLocale || defaultLang, // set locale zh-CN
+  fallbackLocale: sysLocale || defaultLang, // set fallback locale en-US
   messages: importAllLocales()
 });
 

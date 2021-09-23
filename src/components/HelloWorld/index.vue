@@ -9,6 +9,7 @@
   </el-date-picker>
   <el-button type="primary" @click="count++">count is: {{ count }}</el-button>
   <el-button type="primary" @click="toggleLang">切换语言</el-button>
+  <h1>{{ locale }}</h1>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -17,9 +18,12 @@
 
 <script lang="ts">
   import { ref, defineComponent } from 'vue'
+  import { useStore } from 'vuex';
   import { elementPlusMessages } from "/@/plugins/i18n";
   import { useI18n } from "vue-i18n";
   import { setLocale } from "/@/plugins/i18n/config";
+  import { StateType as GlobalStateType } from '/@/store/global';
+  import fa from "element-plus/packages/locale/lang/fa";
 
   export default defineComponent({
     name: 'HelloWorld',
@@ -31,20 +35,23 @@
       }
     },
     setup: (props, ctx) => {
-      let langs = ref(true);
       const { locale, t } = useI18n();
       const count = ref(0);
       const value = ref('');
+      const store = useStore<{
+        global: GlobalStateType;
+      }>();
       // 国际化语言切换
       const toggleLang = (): void => {
-        langs.value = !langs.value;
-        if(langs.value) {
-          locale.value = "zh-CN";
-        } else {
+        // 切换 i18n 数据
+        if(locale.value === "zh-CN") {
           locale.value = "en-US";
+        } else {
+          locale.value = "zh-CN";
         }
-        console.log(locale.value)
-        setLocale(locale.value);
+        // 修改 store 数据
+        store && store.commit('global/changeLanguage', locale.value);
+        setLocale(locale.value, false);
         // console.log(locale.value)
         // console.log(elementPlusMessages[locale])
         // elementLocale(elementPlusMessages[locale.value]);
@@ -52,7 +59,7 @@
       return {
         count,
         value,
-        langs,
+        locale: locale as unknown as string,
         toggleLang
       }
     },

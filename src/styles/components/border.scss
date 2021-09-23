@@ -1,14 +1,21 @@
+/* Element Chalk Variables */
+@use "sass:math";
+@use "sass:map";
 @import "../../plugins/element-plus/element-variables.scss";
+
+$--border-color-base: map.get($--border-color, 'base') !default;
 /*padding-top*/
-.border2{
+.border2 {
   border: 1px solid $--border-color-base;
   border-radius: 2px;
 }
-.border3{
+
+.border3 {
   border: 1px solid $--border-color-base;
   border-radius: 3px;
 }
-.border5{
+
+.border5 {
   border: 1px solid $--border-color-base;
   border-radius: 5px;
 }
